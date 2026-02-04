@@ -1,24 +1,12 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.92"
-    }
-  }
-
-  required_version = ">= 1.2"
-}
 
 provider "aws" {
   region = "ap-south-1"
 }
 
 
-resource "aws_instance" "app_server" {
-  ami           = ami-019715e0d74f695be
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "learn-terraform"
-  }
-}
+resource "aws_instance" "example" {
+    ami = var.ami_value
+    instance_type = var.instance_type_value  
+    subnet_id = ver.subnet_id_value
+    associate_public_ip_address = true
+{
